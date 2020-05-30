@@ -5,6 +5,7 @@ import unicornhat as uh
 import threading
 from time import sleep
 
+serverUrl = ''
 busyStatus = "Free"
 globalRed = 0
 globalGreen = 0
@@ -28,7 +29,7 @@ def busy_light():
             now = datetime.now().time()
             current_time = now.strftime("%H:%M:%S")
             print(f'Fetching Status {current_time}')
-            r = requests.get('https://busyserver.azurewebsites.net/status')
+            r = requests.get(serverUrl)
             newStatus = r.text
             print(f'Status is: {newStatus}')
             #set lights based on status if status changed
