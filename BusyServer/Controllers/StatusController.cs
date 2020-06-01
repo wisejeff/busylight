@@ -18,19 +18,19 @@ namespace BusyServer.Controllers
             this.memoryCache = memoryCache;
         }
 
-        [HttpGet]
-        public string Get()
+        [HttpGet("{id}")]
+        public string Get(string id)
         {
-            return memoryCache.Get<string>("busy_status");
+            return memoryCache.Get<string>($"{id}_busy_status");
         }
 
-        [HttpPost]
-        public string Set([FromBody]string busyStatus)
+        [HttpPost("{id}")]
+        public string Set(string id, [FromBody]string busyStatus)
         {
             var cacheEntryOptions = new MemoryCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromHours(24));
 
-            this.memoryCache.Set("busy_status", busyStatus);
-            return Get();
+            this.memoryCache.Set($"{id}_busy_status", busyStatus);
+            return Get(id);
         }
     }
 }

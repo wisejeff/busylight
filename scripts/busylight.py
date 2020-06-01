@@ -5,6 +5,7 @@ import unicornhat as uh
 import threading
 from time import sleep
 
+apiKey = ''
 serverUrl = ''
 busyStatus = "Free"
 globalRed = 0
@@ -29,7 +30,7 @@ def busy_light():
             now = datetime.now().time()
             current_time = now.strftime("%H:%M:%S")
             print(f'Fetching Status {current_time}')
-            r = requests.get(serverUrl)
+            r = requests.get(f'{serverUrl}/status/{apiKey}')
             newStatus = r.text
             print(f'Status is: {newStatus}')
             #set lights based on status if status changed

@@ -4,7 +4,8 @@ After=multi-user.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/python3 /home/busybody/busylight.py
+WorkingDirectory=/home/busybody/busylight
+ExecStart=python3 busylight.py
 Restart=always
 
 [Install]
