@@ -65,14 +65,14 @@ Refresh - It is possible for the BusyServer to get out of sync if the LyncReader
 4. The lights are bright so I recommend setting the diffuser on top over the LEDs for now.
 
 ### Installing the OS
-5. Format the SD card using SD Card Formatter for windows or a digital camera will also work.  https://www.sdcard.org/downloads/formatter/
-6. Download the DietPi image https://dietpi.com/downloads/images/DietPi_RPi-ARMv6-Buster.7z
-7. Unzip/extract the DietPi.7z image (ideally your desktop)
-8. Download and install Etcher https://etcher.io/
-9. Run Etcher (may need to run as administrator)
-10. Select the DietPi.img file
-11. Select the drive of your SD card
-12. Click Flash.
+1. Format the SD card using SD Card Formatter for windows or a digital camera will also work.  https://www.sdcard.org/downloads/formatter/
+2. Download the DietPi image https://dietpi.com/downloads/images/DietPi_RPi-ARMv6-Buster.7z
+3. Unzip/extract the DietPi.7z image (ideally your desktop)
+4. Download and install Etcher https://etcher.io/
+5. Run Etcher (may need to run as administrator)
+6. Select the DietPi.img file
+7. Select the drive of your SD card
+8. Click Flash.
 
 ### Pre-Configuration
 1. Go to My Computer... select the SD card
