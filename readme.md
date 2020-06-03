@@ -9,6 +9,8 @@
 ## Architecture
 There are three components that make the Skype Status Light function.  1) The BusyServer 2) The BusyLight and 3) The LyncReader.  The LyncReader monitors the skyp status and sends the status to the BusyServer.  The BusyLight monitors the BusyServer and changes the color of the light when the status changes.
 
+![alt text](https://github.com/wisejeff/busylight/blob/master/Busylight-Arc.png "Architecture")
+
 ### BusyServer
 The BusyServer is responsible for persisting the status and is the service that enables the BusyLight to know what the skype status is.  Each busy light is issued a unique API key that will tie the LyncReader to the right light.
 
@@ -55,7 +57,8 @@ Refresh - It is possible for the BusyServer to get out of sync if the LyncReader
 ## Putting it all together
 ### Connecting the pHAT and the Pi
 1. Attach the pHAT to the Pi using the nylon bolts, spacers and nuts provided.  See the picture below.
-busy3.png
+
+![alt text](https://github.com/wisejeff/busylight/blob/master/busy3.png "Raspberry Pi Zero with Unicorn pHAT")
 
 2. Make sure that the GPIO pins are in the correct location.  See the photo and/or the pinout link.  Pins should be in position 2 for power, 6 for Ground and 12 for Data
 3. After the SD card has been formatted and the DietPi image burned, then insert the SD card into the slot.
