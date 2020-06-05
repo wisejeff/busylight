@@ -172,15 +172,33 @@ The response should be "Free" and after five seconds, the light should turn gree
 3. Copy the shortcut to C:\Users\<USER>\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup where <USER> is your windows user name.
 
 ## Case and frame for light
+I used the PiBow Zero https://shop.pimoroni.com/products/pibow-zero-w case but I'm not sure I like it.  I only ended up using part of the case because it blocks access to the SD card.
+
+I had some issues getting everything together in a case and on a frame to hang on the wall.  None of the parts I ordered came with bolts and spacers the right size to attach the case, Pi, pHAT and diffusr together.  Either the bolt was too short or the diameter was too large.
+
+I used some scrap cherry wood for the frame.  The size was 5"x5" which turned out to be just the right size for a picture frame hanger, the Pi and a battery.  I ended up cutting a smaller hole in my frame just the right size for the lights (2" x 1").  To make the whole, I first measured drew the 2"x1" rectangle on the board being careful to center it.  I then drilled a 1/2" hole in each corner.  Finally, I used my jigsaw to cut the rest of the rectable out.
+
+I left the Pi and pHAT attached as explained in the Putting it together section above.  Then I used two 1.5" x 3mm screws on opposite corners of the PiBow case to attach the diffuser, case and Pi to the back of the frame.  This sandwhiches the Pi/pHat between the case and the diffuser.  The diffuser ends up offset to one side but that is not noticible on the other side of the frame.  I then attached a frame hangar to the back and use 3M Command velcro to attach a small 2600 mAh rechargable battery to the beneath the Pi.  This gives my busylight about 10 hrs of charge.  As long as I remember to charge it overnight, I can move it anywhere in the house.
+
+I will probably replace the case later with a 3d printed case specifically designed for this use case.  You can follow my instructions above or make your own, what ever works for you.
+
 
 
 ## Issues
 Sometimes proxy server can be an issue.
 A possible work-around is to add an entry to your windows hosts file:
-
+Open the hosts file on your computer. (C:\Windows\System32\drivers\etc\hosts)
+Add the following line to the end of the file:
 ```
 137.135.91.176 busyserver.azurewebsites.net
 ```
+
+## Roadmap
+* Add configuration file separate from busylight.py script
+* Add ability to configure light colors and brightness
+* Add custom statuses to LyncReader
+* Add flashing to busylight
+
 
 ## References
 https://github.com/pimoroni/unicorn-hat
