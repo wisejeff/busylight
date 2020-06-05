@@ -5,6 +5,7 @@ import unicornhat as uh
 import threading
 from time import sleep
 
+frequency = 5
 apiKey = ''
 serverUrl = ''
 busyStatus = "Free"
@@ -24,8 +25,8 @@ def busy_light():
         set_status("Offline")
 
         while True:
-            #sleep for 1 second
-            sleep(5)
+            #sleep for 5 second
+            sleep(frequency)
             #fetch the status
             now = datetime.now().time()
             current_time = now.strftime("%H:%M:%S")
