@@ -167,7 +167,7 @@ You can test the light by executing the following curl command.  Replace '<YOURA
 The response should be "Free" and after five seconds, the light should turn green.
 
 ## Install the LyncReader
-1. Copy the LyncReader.zip file to a location on your PC.
+1. Copy the LyncReader.zip file https://github.com/wisejeff/lyncreader/raw/master/LyncReader.zip to a location on your PC.
 2. Extract the Lyncreader.zip
 3. Open the LyncReader.exe.config file in a text editor.
 4. Set the value of the ApiKey setting to your API key.
