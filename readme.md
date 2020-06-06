@@ -138,6 +138,13 @@ The unicornhat.sh script will install all necessary software required for the Pi
 
 ### Install the busylight components
 
+Create a directory for the busy light scripts...
+
+``` bash
+> mkdir busylight
+> cd busylight
+```
+
 Run the script to install the busylight service
 
 ``` bash
