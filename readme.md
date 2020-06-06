@@ -124,17 +124,22 @@ For this step, you may need a micro HDMI cable to see the console as the device 
 
 The unicornhat.sh script will install all necessary software required for the Pi to communicate to the pHAT
 
-1. Run script to install python and unicorn phat libs
+1. Switch user to busybody
+
+```
+> su -l busybody
+```
+2. Run script to install python and unicorn phat libs
 
 ``` bash
 > sudo curl https://raw.githubusercontent.com/wisejeff/busylight/master/scripts/unicornhat.sh | bash
 ```
 
-2. When prompted to install Python2, choose no.
-3. When prompted to install Python3, choose yes.
-4. When prompted, choose a full install
-5. When prompted about aduio, choose no.
-6. When prompted to reboot, choose yes.
+3. When prompted to install Python2, choose no.
+4. When prompted to install Python3, choose yes.
+5. When prompted, choose a full install
+6. When prompted about aduio, choose no.
+7. When prompted to reboot, choose yes.
 
 ### Install the busylight components
 
