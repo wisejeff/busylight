@@ -198,7 +198,71 @@ I left the Pi and pHAT attached as explained in the Putting it together section 
 
 I will probably replace the case later with a 3d printed case specifically designed for this use case.  You can follow my instructions above or make your own, what ever works for you.
 
+## Customizing
 
+### Status Colors
+If you don't like the colors as they are, you can change them.  It's just python after all ;)
+
+The colors are defined by their RGB color code.
+
+In the method set_status, the light colors are set based on the status parameter.  You can change the color by providing a different RGB value for the status you wish to change.  See below.
+
+``` python
+def set_status(status):
+    global busyStatus
+    busyStatus = status
+
+    print(f'Status has changed to {status}')
+
+    if status == "Offline":
+        set_lights(255,255,255,'','')
+    elif status == "Free":
+        set_lights(0,144,0,'','')
+    elif status == "Busy":
+        set_lights(252, 117, 20,'','')        
+    elif status == "DoNotDisturb":
+        set_lights(94,1,120,'','')                
+    elif status == "Away" or status == "TemporarilyAway":
+        set_lights(255,191,0,'','')
+    elif status == "In a call" or status == "In a conference call":
+        set_lights(179,0,0,'','')
+    elif status == "In a video call":
+        set_lights(94,1,120,'','')
+    else:
+        set_lights(255,255,255,'','') 
+
+```
+
+For example, if you wanted to change the color of the "Free" status to blue, you would modify
+
+``` python
+elif status == "Free":
+        set_lights(0,144,0,'','')
+```
+to
+
+``` python
+elif status == "Free":
+        set_lights(3, 57, 252,'','')
+```
+
+### Frequency
+
+The busy light service checks the status from the busy server every five seconds by default.  If you want to change the frequency of how often the busy light checks the status, modify the frequency variable at the top of the script.  The frequency variable is the number of seconds the script will wait to check the status.  I do not recommend a frequency less than 5 seconds for anything other than debugging.
+
+``` python
+
+import socket
+import requests
+from datetime import datetime
+import unicornhat as uh
+import threading
+from time import sleep
+
+frequency = 5
+...
+
+```
 
 ## Issues
 Sometimes proxy server can be an issue.
