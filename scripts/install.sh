@@ -142,7 +142,10 @@ if [ $FILECHECK == 'false' ]; then
 
     #download service 
     curl https://raw.githubusercontent.com/wisejeff/busylight/master/scripts/busylight.service -o $INSTALL_DIR/busylight.service
-     
+
+    #download requirements 
+    curl https://raw.githubusercontent.com/wisejeff/busylight/master/scripts/requirements.txt -o $INSTALL_DIR/busylight.service
+
     chown -R $SUDO_USER:$SUDO_USER $INSTALL_DIR
     cd $INSTALL_DIR
 fi
