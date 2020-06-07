@@ -6,8 +6,8 @@ import threading
 from time import sleep
 
 frequency = 5
-apiKey = ''
-serverUrl = ''
+apiKey = 'a76aa9b1-cb7c-4955-a1dc-65f5da33f888'
+serverUrl = 'https://busyserver.azurewebsites.net'
 busyStatus = "Free"
 globalRed = 0
 globalGreen = 0
@@ -57,7 +57,7 @@ def set_status(status):
     elif status == "Busy":
         set_lights(252, 117, 20,'','')        
     elif status == "DoNotDisturb":
-        set_lights(94,1,120,'','')                
+        set_dnd_lights(179,0,0,'','')                
     elif status == "Away" or status == "TemporarilyAway":
         set_lights(255,191,0,'','')
     elif status == "In a call" or status == "In a conference call":
@@ -66,6 +66,54 @@ def set_status(status):
         set_lights(94,1,120,'','')
     else:
         set_lights(255,255,255,'','')        
+
+def set_dnd_lights(r, g, b, brightness, speed):
+    uh.clear()
+    
+    # if brightness != '':
+	#     uh.brightness(brightness)
+
+    # for y in range(height):
+    #     for x in range(width):
+    #         if y == height -1 and x < height:
+    #             uh.set_pixel(x, y, r, g, b)
+    #             uh.set_pixel(x, y - x, 255, 255, 255)
+    #         else:
+    #             uh.set_pixel(x, y, r, g, b)
+    
+    uh.set_pixel(0, 0, r, g, b)
+    uh.set_pixel(1, 1, r, g, b)
+    uh.set_pixel(2, 2, r, g, b)
+    uh.set_pixel(3, 3, r, g, b)
+    uh.set_pixel(4, 0, r, g, b)
+    uh.set_pixel(5, 1, r, g, b)
+    uh.set_pixel(6, 2, r, g, b)
+    uh.set_pixel(7, 3, r, g, b)
+
+    uh.set_pixel(0, 3, r, g, b)
+    uh.set_pixel(1, 2, r, g, b)
+    uh.set_pixel(2, 1, r, g, b)
+    uh.set_pixel(3, 0, r, g, b)
+    uh.set_pixel(4, 3, r, g, b)
+    uh.set_pixel(5, 2, r, g, b)
+    uh.set_pixel(6, 1, r, g, b)
+    uh.set_pixel(7, 0, r, g, b)
+
+    uh.show()
+
+    # if speed != '' :
+    #     sleep(speed)
+    #     uh.clear()
+    #     crntT = threading.currentThread()
+    #     while getattr(crntT, "do_run", True) :
+    #         for y in range(height):
+    #             for x in range(width):
+    #                 uh.set_pixel(x, y, r, g, b)
+    #         uh.show()
+    #         sleep(speed)
+    #         uh.clear()
+    #         uh.show()
+    #         sleep(speed)
 
 def set_lights(r, g, b, brightness, speed):
 
