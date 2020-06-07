@@ -6,8 +6,8 @@ import threading
 from time import sleep
 
 frequency = 5
-apiKey = 'a76aa9b1-cb7c-4955-a1dc-65f5da33f888'
-serverUrl = 'https://busyserver.azurewebsites.net'
+apiKey = ''
+serverUrl = ''
 busyStatus = "Free"
 globalRed = 0
 globalGreen = 0
