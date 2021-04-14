@@ -27,10 +27,21 @@ namespace BusyServer.Controllers
         [HttpPost("{id}")]
         public string Set(string id, [FromBody]string busyStatus)
         {
-            var cacheEntryOptions = new MemoryCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromHours(24));
+            var cacheEntryOptions = new MemoryCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromHours(24)).SetAbsoluteExpiration(TimeSpan.FromHours(24));
 
             this.memoryCache.Set($"{id}_busy_status", busyStatus);
             return Get(id);
         }
+
+        [HttpPost("/api/v2/[controller]/{id}")]
+        public string Set(string id, [FromBody]StatusViewModel busyStatus)
+        {
+            return Set(id, busyStatus.Status);
+        }
+    }
+
+    public class StatusViewModel
+    {
+        public string Status { get; set; }
     }
 }

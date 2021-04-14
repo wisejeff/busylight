@@ -139,5 +139,5 @@ def set_lights(r, g, b, brightness, speed):
             uh.show()
             sleep(speed)
 
-if __name__ == "__main__":
-    busy_light()
+#if __name__ == "__main__":
+busy_light()
